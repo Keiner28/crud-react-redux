@@ -1,33 +1,9 @@
 import { Badge, Card, Table, TableBody, TableCell, TableHead, TableHeaderCell, TableRow, Title } from '@tremor/react'
 
-const users = [
-  {
-    id: '1',
-    name: 'Javier',
-    email: 'javier@gmail.com',
-    github: 'javier'
-  },
-  {
-    id: '2',
-    name: 'Juan',
-    email: 'juan@gmail.com',
-    github: 'juan'
-  },
-  {
-    id: '3',
-    name: 'Pedro',
-    email: 'pedro@gmail.com',
-    github: 'pedro'
-  },
-  {
-    id: '4',
-    name: 'Josee',
-    email: 'jose@gmail.com',
-    github: 'jose'
-  }
-]
+import { useAppSelector } from '../hooks/store'
 
 export function ListOfUsers() {
+  const users = useAppSelector(state => state.users)
   return (
     <Card>
       <Title>
